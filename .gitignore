@@ -1,0 +1,32 @@
+# data and .csv files - please contact john.collins@edhec.com re source data
+*.csv
+*.xls*
+*.pkl
+data/
+allfiles/
+*.txt
+*.jsonl
+
+# jupyter checkpoints
+.ipynb_checkpoints/
+
+# venv and logs
+venv/
+logs/
+lambda-stack-with-tensorflow-pytorch/
+lambda-stack-without-tensorflow/
+
+# working files, which I generally name 'rem'
+*rem.* *REM.*
+
+# environment variables
+.env
+.flaskenv
+
+# shell scripts
+*.sh*
+
+# GIF and mp4
+*.gif
+*.GIF
+*.mp4
