@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- meta tag for LinkedIn -->
+    <meta name="image" property="og:image" content="https://project-manager.ai/static/images/project-manager.png">
+    <meta property="og:image:secure_url" content="https://project-manager.ai/static/images/project-manager.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="title" content="project-manager.ai">
+    <meta name="description" content="An AI project assistant application that enables users to choose specific AI models and project types. The application processes user input to provide dynamic, relevant completions and offers an intuitive UI with modal selections and real-time feedback.">
+
+    <meta property="og:title" content="project-manager.ai">
+    <meta property="og:description" content="An AI project assistant application that enables users to choose specific AI models and project types. The application processes user input to provide dynamic, relevant completions and offers an intuitive UI with modal selections and real-time feedback.">
+    <meta property="og:url" content="https://project-manager.ai/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Project Manager AI">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="project-manager.ai">
+    <meta name="twitter:description" content="An AI project assistant application that enables users to choose specific AI models and project types. The application processes user input to provide dynamic, relevant completions and offers an intuitive UI with modal selections and real-time feedback.">
+    <meta name="twitter:image" content="https://project-manager.ai/static/images/project-manager.png">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://project-manager.ai/static/images/project-manager.png">
+
+    <title>project-manager.ai</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/project-manager-favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/project-manager-favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/project-manager-favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/images/project-manager-favicon/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/project-manager-favicon/favicon.ico">
+    <a href="https://project-manager.ai/"><img src="https://project-manager.ai/static/images/project-manager-favicon/favicon.ico" alt="Favicon" style="display:none;"></a>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Error handling and custom scripts -->
+    <script src="/static/js/errorHandling.js"></script>
+    <script src="/static/js/scripts.js"></script>
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand ml-2 text-light" href="{{ url_for('main.index') }}">
+                <img src="static/images/project-manager.png" alt="Project Manager Icon" class="navbar-icon custom-icon-size">
+                <span class="navbar-text">project-manager.ai</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://www.linkedin.com/in/johncollins-ai/" title="Follow me on LinkedIn" target="_blank">
+                        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" width="29" height="29">
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://github.com/johncollinsai" title="Follow me on GitHub" target="_blank">  
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="24" height="24">
+                        </a>
+                    </li>               
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- chat-interface -->
+    <div class="container-fluid chat-interface">
+
+        <!-- chat menu -->
+        <div class="chat-menu">
+
+            <!-- <button class="btn btn-custom mb-3 btn-lg btn-block">New Project</button> -->
+            <label for="modalities" class="form-label mb-2">Select model:</label>
+
+            <!-- Model Selection Button -->
+            <button id="open-model-modal-btn" class="btn open-modal-btn">Model</button> 
+
+            <!-- Model Selection Modal -->
+            <div class="project-selection-modal" id="model-selection-modal">
+                <div class="project" data-description="GPT-4">
+                    <img src="static/images/model-icons/gpt-4-0613.png" alt="GPT-4">
+                    <p>GPT-4</p>
+                </div>
+                <div class="project" data-description="GPT-4-Turbo">
+                    <img src="static/images/model-icons/gpt-4-turbo.png" alt="GPT-4-Turbo">
+                    <p>GPT-4-Turbo</p>
+                </div>
+                <div class="project" data-description="PaLM-2">
+                    <img src="static/images/model-icons/palm-2.png" alt="PaLM-2">
+                    <p>PaLM-2</p>
+                </div>
+                <div class="project" data-description="Claude-2">
+                    <img src="static/images/model-icons/claude-2.png" alt="Claude-2">
+                    <p>Claude-2</p>
+                </div>
+            </div>
+
+            <!-- <button class="btn btn-custom mb-3 btn-lg btn-block">New Project</button> -->
+            <label for="modalities" class="form-label mb-2">Select project:</label>
+
+            <!-- Project Selection Button -->
+            <button id="open-project-modal-btn" class="btn open-modal-btn">Project</button>  
+
+            <!-- Project Selection Modal (this remains largely unchanged) -->
+            <div class="project-selection-modal" id="project-selection-modal">
+                <div class="project" data-description="Assistant">
+                    <img src="static/images/project-selection-modal/assistant.png" alt="Assistant">
+                    <p>Assistant</p>
+                </div>
+                <div class="project" data-description="POC">
+                    <img src="static/images/project-selection-modal/poc.png" alt="POC">
+                    <p>POC</p>
+                </div>
+                <div class="project" data-description="Model">
+                    <img src="static/images/project-selection-modal/model.png" alt="Model">
+                    <p>Model</p>
+                </div>
+                <div class="project" data-description="PAAS">
+                    <img src="static/images/project-selection-modal/paas.png" alt="PAAS">
+                    <p>PAAS</p>
+                </div>
+            </div>
+
+            <p class="text-muted text-muted-bordered">Available models: GPT-4, GPT-4-Turbo, PaLM-2</p>
+            
+        </div>
+            
+        <!-- The active chat conversation -->
+        <div class="chat-area">
+            <div class="container text-white chat-container">
+                <div id="result" class="mt-4 text-muted"></div>
+            </div>
+            <form id="prompt-form" class="prompt-form">
+                <div class="mb-3">
+                    <div class="position-relative">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8"> 
+                                <div class="input-spinner-wrapper">
+                                    <div class="text-area-wrapper">
+                                        <div class="text-center mt-2 d-flex justify-content-center align-items-center flex-wrap">
+                                            <p id="selected-model" class="text-lightgrey mx-3" style="color: purple;">Model: None</p>
+                                            <p id="selected-project" class="text-lightgrey mx-3" style="color: purple;">Project: None</p>
+                                        </div>                                                                    
+                                        <textarea class="form-control" id="prompt" name="prompt" placeholder="Short description of your project ..." required></textarea>
+                                        <button type="submit" class="btn btn-primary submit-button circle-btn"><i class="fas fa-arrow-right"></i></button>
+                                    </div>
+                                    <div class="spinner">
+                                        <div class="dot dot-1"></div>
+                                        <div class="dot dot-2"></div>
+                                        <div class="dot dot-3"></div>
+                                        <div class="dot dot-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center mt-2"><small id="version-info" class="text-muted">project-manager.ai may produce inaccurate information. August-23 Version</small></p>
+                    </div>
+                </div>
+            </form>                    
+        </div>
+
+    </div>
+
+    <!-- Skeleton Screen -->
+    <div id="skeleton-screen" class="skeleton-screen d-none">
+        <div id="spinner-container">
+            <div class="spinner">
+                <div class="dot dot-1"></div>
+                <div class="dot dot-2"></div>
+                <div class="dot dot-3"></div>
+                <div class="dot dot-4"></div>
+            </div>
+            <!-- NB: problem with spinner text at the moment, it is shown at bottom of page, creating a vertical scrollbar. Resolve -->
+            <!-- <div class="spinner-text">Responding ...</div> -->
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+                           

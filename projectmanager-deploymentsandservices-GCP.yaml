@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projectmanager
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      run: projectmanager
+  template:
+    metadata:
+      labels:
+        run: projectmanager
+    spec:
+      serviceAccountName: vertex-ai-service-account
+      containers:
+      - image: asia-southeast1-docker.pkg.dev/johncollins/project-manager/project-manager:v0.2.18
+        imagePullPolicy: IfNotPresent
+        name: projectmanager
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openai-api-key
+              key: key
+        resources:
+          requests:
+            cpu: 200m
+            memory: 1Gi
+          limits:
+            cpu: 500m
+            memory: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: projectmanager
+  namespace: default
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: projectmanager
+  type: NodePort
